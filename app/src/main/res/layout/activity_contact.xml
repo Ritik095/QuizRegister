@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".contact">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="180dp"
+        android:layout_width="400dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        app:cardCornerRadius="45dp">
+
+    <ImageView
+        android:layout_height="145dp"
+        android:layout_width="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ritik"
+        android:id="@+id/image"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:text="Ritik Raushan"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="290dp"
+        android:id="@+id/text1"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="(Co-Founder)"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text2"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="Email:-nandankr195@gmail.com"/>
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="180dp"
+        android:layout_width="400dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="5dp"
+        app:cardCornerRadius="45dp">
+
+    <ImageView
+        android:layout_height="155dp"
+        android:layout_width="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/sach"
+        android:id="@+id/image1"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text3"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:text="Sachin Singh"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="290dp"
+        android:id="@+id/text4"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="(Co-Founder)"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text5"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="Email:-knowsach@gmail.com"/>
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="180dp"
+        android:layout_width="400dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        app:cardCornerRadius="45dp">
+
+    <ImageView
+        android:layout_height="145dp"
+        android:layout_width="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ritik"
+        android:id="@+id/image3"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text6"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:text="Ritik Raushan"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="290dp"
+        android:id="@+id/text7"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="(Co-Founder)"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text8"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="Email:-nandankr195@gmail.com"/>
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="180dp"
+        android:layout_width="400dp"
+        android:layout_marginTop="375dp"
+        android:layout_marginLeft="5dp"
+        app:cardCornerRadius="45dp">
+
+    <ImageView
+        android:layout_height="155dp"
+        android:layout_width="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/image2"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text01"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:text="Ankit Prasad"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="290dp"
+        android:id="@+id/text02"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="(Co-Founder)"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text03"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="Email:-kumargourav@gmail.com"/>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="180dp"
+        android:layout_width="400dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginLeft="5dp"
+        app:cardCornerRadius="45dp">
+
+    <ImageView
+        android:layout_height="155dp"
+        android:layout_width="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/image4"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text10"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:text="Rajiv Pandit"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="290dp"
+        android:id="@+id/text11"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="(Co-Founder)"
+        android:textColorHint="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginLeft="150dp"
+        android:id="@+id/text12"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:text="Email:-kumargourav@gmail.com"/>
+
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>

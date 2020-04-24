@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register">
+
+    <ScrollView android:layout_height="wrap_content" android:layout_width="match_parent">
+
+
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20dp" android:textStyle="bold" android:text="Name"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:textSize="20dp" android:hint="Enter Your Full Name" android:inputType="textPersonName" android:layout_marginTop="10dp" android:ems="10" android:id="@+id/name"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20dp" android:textStyle="bold" android:text="Email" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:hint="Enter Your Email-Id" android:inputType="textEmailAddress" android:layout_marginTop="10dp" android:ems="10" android:id="@+id/email"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20dp" android:textStyle="bold" android:text="Mobile number" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:hint="Contact Number" android:inputType="phone" android:layout_marginTop="10dp" android:ems="10" android:id="@+id/contact"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20dp" android:textStyle="bold" android:text="Password" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:hint="Enter Your Password" android:inputType="textPassword" android:layout_marginTop="10dp" android:ems="10" android:id="@+id/pass"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="20dp" android:textStyle="bold" android:text="Conform Password" android:layout_marginTop="10dp"/>
+
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:hint="Re-Enter Your Password" android:inputType="textPassword" android:layout_marginTop="10dp" android:ems="10" android:id="@+id/repass"/>
+
+
+    <RadioGroup android:layout_height="match_parent" android:layout_width="match_parent" android:layout_marginTop="10dp">
+
+    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="25dp" android:text="Male" android:id="@+id/male"/>
+
+    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="25dp" android:text="Female" android:id="@+id/female"/>
+
+    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="25dp" android:text="Transgender" android:id="@+id/trans"/>
+
+</RadioGroup>
+
+    <Button android:layout_height="65dp" android:layout_width="match_parent" android:textSize="25dp" android:textStyle="bold" android:text="Register" android:layout_marginTop="10dp" android:id="@+id/register" android:background="@drawable/padding"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="25dp" android:textStyle="bold" android:text="Already have an Account?Click Here" android:layout_marginTop="10dp" android:id="@+id/click"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="25dp" android:textStyle="bold" android:text="OR" android:layout_marginTop="10dp" android:textColor="@color/black" android:layout_marginLeft="190dp"/>
+
+    <ImageView android:layout_height="wrap_content" android:layout_width="78dp" android:layout_marginTop="10dp" android:id="@+id/gmail" android:src="@drawable/gmail"/>
+
+    <ImageView android:layout_height="46dp" android:layout_width="70dp" android:layout_marginTop="-42dp" android:id="@+id/google" android:layout_marginLeft="150dp" android:src="@drawable/google"/>
+
+    <ImageView android:layout_height="53dp" android:layout_width="84dp" android:layout_marginTop="-47dp" android:id="@+id/fb" android:layout_marginLeft="300dp" android:src="@drawable/fb"/>
+
+    <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="-400dp" android:id="@+id/progressBar" android:visibility="invisible"/>
+
+</LinearLayout>
+
+</ScrollView>
+</RelativeLayout>
