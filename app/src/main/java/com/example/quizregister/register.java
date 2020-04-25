@@ -48,7 +48,7 @@ public class register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         femail = (EditText) findViewById(R.id.email);
-        fpassword = (EditText) findViewById(R.id.password);
+        fpassword = (EditText) findViewById(R.id.pass);
         fname = (EditText) findViewById(R.id.name);
         fcontact = (EditText) findViewById(R.id.contact);
         fre_pass = (EditText) findViewById(R.id.repass);
@@ -60,9 +60,10 @@ public class register extends AppCompatActivity {
         female = (RadioButton) findViewById(R.id.female);
         trans = (RadioButton) findViewById(R.id.trans);
         register = (Button) findViewById(R.id.register);
+        progress =(ProgressBar)findViewById(R.id.progressBar);
 
         fAuth = FirebaseAuth.getInstance();
-        final FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         if (fAuth.getCurrentUser() !=null){
             startActivity(new Intent(getApplicationContext(),login.class));
@@ -82,31 +83,38 @@ public class register extends AppCompatActivity {
 //name
                 if (TextUtils.isEmpty(name)){
                     fname.setError("Please Enter Full Name....");
+
                 }
 //for email matching
                 if (email.matches(emailPattern)){
                     femail.setError("Please Enter Valid Email..");
-                //}
 
-                //else {
-                  //  if (TextUtils.isEmpty(email)) {
-                     //   femail.setError("Please Enter email..");
-                    //}
+                }
+
+                else {
+                   if (TextUtils.isEmpty(email)) {
+                        femail.setError("Please Enter email..");
+
+                    }
                 }
 //for password
                 if (TextUtils.isEmpty(password)) {
                     fpassword.setError("Please enter password....");
 
+
                 }
                 if (password.length() <= 5) {
                     Toast.makeText(getApplicationContext(), "Password must >5 digite", Toast.LENGTH_SHORT).show();
+
                 }
 //phone
                 if (TextUtils.isEmpty(phone)){
                     fcontact.setError("Enter phone number..");
+
                 }
-                if (phone.length()<10 && phone.length()>12){
+                if (phone.length()<10 || phone.length()>12){
                     fcontact.setError("Invalid Mobile Number...");
+
                 }
 //radiobutton
                 if (male.isChecked()){
@@ -127,13 +135,14 @@ public class register extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Registerd Successfully", Toast.LENGTH_SHORT).show();
+                            progress.setVisibility(View.GONE);
                             userID= fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fStore.collection("users").document(userID);
+                            DocumentReference documentReference = fStore.collection("users").document("userID");
                             Map<String, Object> user = new HashMap<>();
                             user.put("fname",name);
                             user.put("femail",email);
                             user.put("fcontact",phone);
-                            documentReference.set("user").addOnSuccessListener((new OnSuccessListener<Void>() {
+                            documentReference.set(user).addOnSuccessListener((new OnSuccessListener<Void>() {
 
                                 @Override
                                 public void onSuccess(Void aVoid) {
