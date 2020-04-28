@@ -39,10 +39,6 @@ public class login extends AppCompatActivity {
         timeToLogin = (ProgressBar) findViewById(R.id.timeReq);
         forget_pass = (TextView) findViewById(R.id.forgetpass);
 
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(login.this, register.class));
-            finish();
-        }
 
 
         forget_pass.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +77,7 @@ public class login extends AppCompatActivity {
                         {
                             Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
                             timeToLogin.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(login.this,contact.class));
+                            startActivity(new Intent(login.this,select_topic.class));
 
                         }
                         else

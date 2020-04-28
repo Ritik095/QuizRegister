@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "306593314566-l7ij95po8mknk35e3fctah38e2ieh6gq.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.quizregister",
-            "certificate_hash": "4d7adfc57bb7d1019a437513e857a81b6df5d121"
-          }
-        },
-        {
           "client_id": "306593314566-dqqpv9dv0ja9td1r79hohacj8pel5bpq.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -40,7 +40,7 @@ public class register extends AppCompatActivity {
     ProgressBar progress;
     FirebaseFirestore fStore;
     String userID;
-    private String TAG;
+    private String TAG = "Message";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,7 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
                 String gender = "";
                 final String email = femail.getText().toString().trim();
-                final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                final String emailPattern = "[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9._]{2,}.[a-zA-Z]{2,4}";
                 final String password = fpassword.getText().toString().trim();
                 final String name = fname.getText().toString().trim();
                 final String phone = fcontact.getText().toString().trim();
@@ -83,37 +83,46 @@ public class register extends AppCompatActivity {
 //name
                 if (TextUtils.isEmpty(name)){
                     fname.setError("Please Enter Full Name....");
+                    return;
+
 
                 }
 //for email matching
                 if (email.matches(emailPattern)){
                     femail.setError("Please Enter Valid Email..");
 
+
                 }
 
                 else {
                    if (TextUtils.isEmpty(email)) {
                         femail.setError("Please Enter email..");
+                        return;
 
                     }
                 }
 //for password
                 if (TextUtils.isEmpty(password)) {
                     fpassword.setError("Please enter password....");
+                    return;
 
 
                 }
                 if (password.length() <= 5) {
                     Toast.makeText(getApplicationContext(), "Password must >5 digite", Toast.LENGTH_SHORT).show();
+                    return;
 
                 }
 //phone
                 if (TextUtils.isEmpty(phone)){
                     fcontact.setError("Enter phone number..");
+                    return;
 
                 }
                 if (phone.length()<10 || phone.length()>12){
                     fcontact.setError("Invalid Mobile Number...");
+                    return;
+
 
                 }
 //radiobutton
@@ -126,45 +135,50 @@ public class register extends AppCompatActivity {
                 if (trans.isChecked()){
                     gender="Transgender";
                 }
-                progress.setVisibility(View.VISIBLE);
+                //progress.setVisibility(View.VISIBLE);
 
 //firebaseAuth
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                fAuth.createUserWithEmailAndPassword(email,password)
+                        .addOnCompleteListener(register.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Log.d(TAG, "New user registration: " + task.isSuccessful());
 
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getApplicationContext(), "Registerd Successfully", Toast.LENGTH_SHORT).show();
-                            progress.setVisibility(View.GONE);
-                            userID= fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fStore.collection("users").document("userID");
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("fname",name);
-                            user.put("femail",email);
-                            user.put("fcontact",phone);
-                            documentReference.set(user).addOnSuccessListener((new OnSuccessListener<Void>() {
+                                if (!task.isSuccessful()) {
+                                    Log.e(TAG,task.getException().getMessage());
+                                    Toast.makeText(register.this, "Authentication failed. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "User profile created.. " + userID);
 
+
+                                } else {
+                                    Log.e(TAG,"Success");
+                                    userID= fAuth.getCurrentUser().getUid();
+                                    DocumentReference documentReference = fStore.collection("users").document("userID");
+                                    Map<String, Object> user = new HashMap<>();
+                                    user.put("fname",name);
+                                    user.put("femail",email);
+                                    user.put("fcontact",phone);
+                                    documentReference.set(user).addOnSuccessListener((new OnSuccessListener<Void>() {
+
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d(TAG, "User profile created.. " + userID);
+
+                                        }
+                                    })).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d(TAG,"onFailoure"+ e.toString());
+                                        }
+                                    });
+
+                                    Intent in = new Intent(register.this,login.class);
+                                    startActivity(in);
+                                    finish();
                                 }
-                            })).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG,"onFailoure"+ e.toString());
-                                }
-                            });
+                            }
+                        });
 
-                            Intent in = new Intent(register.this,login.class);
-                            startActivity(in);
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(),"Registerd failed..", Toast.LENGTH_SHORT).show();
-                            progress.setVisibility(View.GONE);
-                        }
-                    }
-                });
             }
 
         });
